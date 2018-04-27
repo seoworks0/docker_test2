@@ -12,7 +12,7 @@ RUN apk add --no-cache --virtual=build-deps git bash curl file openssl sudo perl
 
 CMD ["/usr/local/bin/mecab"]
 
-FROM python:3-alpine
+FROM python
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
