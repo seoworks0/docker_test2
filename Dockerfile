@@ -17,5 +17,15 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
 ADD requirements.txt /code/
+RUN pip3 install --upgrade pyzmq --install-option="--zmq=bundled" && \
+    pip3 install --upgrade jupyter && \
+    pip3 install --upgrade \
+    numpy \
+    scipy \
+    scikit-learn \
+    matplotlib \
+    pandas \
+    mecab-python3 \
+    neologdn
 RUN pip install -r requirements.txt
 ADD . /code/
