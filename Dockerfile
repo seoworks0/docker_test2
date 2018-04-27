@@ -17,6 +17,8 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir /code
 WORKDIR /code
 ADD requirements.txt /code/
+RUN apt-get update && apt-get install -y
+RUN apt-get install libmecab-dev
 RUN pip3 install --upgrade pyzmq --install-option="--zmq=bundled" && \
     pip3 install --upgrade jupyter && \
     pip3 install --upgrade \
