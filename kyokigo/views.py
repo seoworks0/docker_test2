@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import generic
 from .forms import Kyokigo_Form
-from .kyokigo import main
+from .kyokigo import kyoki
 from django.http import HttpResponse
 import datetime
 import csv
@@ -19,7 +19,7 @@ def index(request):
     if request.method == 'POST' and form.is_valid():
         form.save()
         keyword = request.POST['text']
-        kyokigo_v,kyokigo_n = main(keyword)
+        kyokigo_v,kyokigo_n = kyoki(keyword)
         #result = [["kyokigo_n","kyoukigo_v"]]
         result = [["keyword","2018/03/14","10","https://to-kei.net"]]
 
