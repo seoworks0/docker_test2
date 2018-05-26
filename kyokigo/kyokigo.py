@@ -162,5 +162,3 @@ def kyoki():
     #print(nounlist,verblist)
 
     return nounlist,verblist
-
-main()
