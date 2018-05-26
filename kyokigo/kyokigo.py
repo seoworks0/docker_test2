@@ -148,7 +148,7 @@ def kyokilist(dic,text):
     return kyoki_list
 
 
-def main():
+def kyoki():
     phrase = ("結婚式 招待状")
     maxrank = 1
     #urls = g_serps(phrase,maxrank)
